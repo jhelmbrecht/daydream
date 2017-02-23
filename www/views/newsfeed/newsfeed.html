@@ -1,0 +1,44 @@
+
+
+<ion-view view-title="Featured Artists" hide-back-button="true" hide-nav-bar="false">
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon" style="color:white"></button>
+  </ion-nav-buttons>
+
+   <ion-content class="post-content">
+   	<ion-refresher
+       	pulling-text="Pull to refresh..."
+       	on-refresh="doRefresh()">
+     	</ion-refresher>
+		<div class="list card" ng-repeat="news in newsfeed">
+		<a href="#/other_person" class="item item-avatar">
+            <img ng-src="{{news.friend_image}}"></img>
+            <h2>{{news.friend_name}}</h2>
+			<p>2 hours ago</p>
+        </a>
+        <div class="item">
+          	<a href="#/other_person"><h2>{{news.title}}</h2></a>
+        </div>
+        <div class="item item-image">
+          	<a href="#/other_person"><img ng-src="{{news.image}}"></img></a>
+        </div>
+        <div class="item tabs tabs-secondary tabs-icon-left">
+            <a ng-click="shareMain();" class="tab-item">
+			   <span style="font-size:16px">20 Kudos</span>
+               <i class="icon ion-ios-analytics" style="color:#287d7d"></i>
+            </a>
+             <a href="#/other_person" class="tab-item">
+			   <span style="font-size:16px"> 7 Comments</span>
+               <i class="icon ion-ios-compose" style="color:#287d7d"></i>
+             </a>
+         </div>
+      </div>
+      <ion-infinite-scroll
+       	ng-if="postsCompleted == false"
+       	on-infinite="getPosts()"
+       	distance="10%">
+     	</ion-infinite-scroll>
+   </ion-content>
+
+</ion-view>

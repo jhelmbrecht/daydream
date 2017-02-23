@@ -1,0 +1,73 @@
+/* Empty. Add your own CSS if you like */
+
+.larger {
+    font-size: 120px;
+}
+
+.medium {
+    font-size: 30px;
+}
+
+
+/** Error Messages **/
+
+/** Styling for the username field **/
+label.item.has-error {
+  border-bottom: 2px solid red;
+}
+
+/** Styling for the password field when an error exists**/
+label.item.has-error-lr {
+  border-bottom: 2px solid red;
+}
+
+/** Styling for the password field when an error has been resolved**/
+label.item.valid-lr {
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+}
+
+/** Styling for the error text and container **/
+.form-errors {
+  margin: 5px 0
+}
+.form-error {
+  padding: 2px 0 2px 16px;
+  color: red;
+}
+
+ #profile-image {
+        display: block;
+        border-radius: 100px;
+        border: 1px solid #fff;
+        width: 128px;
+        height: 128px;
+        margin: 30px auto 0;
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+      }
+	  
+.bar.bar-positive {
+    border-color: #20a2b7;
+    background-color: #20a2b7;
+    background-image: linear-gradient(0deg, #20a2b7, #20a2b7 50%, transparent 50%);
+    color: #fff; 
+}	  
+	  
+
+[nav-bar-transition="ios"] [nav-bar="active"] .bar, [nav-bar-transition="ios"] [nav-bar="entering"] .bar, [nav-bar-transition="android"] [nav-bar="active"] .bar, [nav-bar-transition="android"] [nav-bar="entering"] .bar{
+    border-color: #20a2b7 !important;
+    background-color: #20a2b7 !important; 
+    background-image: linear-gradient(0deg, #20a2b7, #20a2b7 50%, transparent 50%) !important;
+    color: #fff;
+}
+
+
+input[type="textarea"]{
+ border:0 !important;
+}
+
+.item-floating-label .input-label{
+    opacity:1 !important;
+	padding:0px !important;
+	top:5px !important;
+}

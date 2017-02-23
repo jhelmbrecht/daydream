@@ -1,0 +1,79 @@
+
+
+<ion-view view-title="Community" hide-back-button="false" hide-nav-bar="false">
+
+ <ion-nav-bar>
+  <ion-nav-back-button style="color:white">
+  </ion-nav-back-button>
+</ion-nav-bar>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-edit" style="color:white;font-size:16px"></button>
+  </ion-nav-buttons>
+        <ion-content class="has-header">
+           <div id="content" >
+        <div id="profile-info" style="height:200px">
+          <h3 id="profile-name" style="position: absolute;bottom:0;margin-left:15px;color:#fff;">Pham</h3>
+        </div>
+      </div>
+	  
+<div class="row" style="height:55px;background:#f6f6f6"> 
+<div class="col" style="padding:4px"><button class="button button-community" ng-click="go('gallery')">
+  Photos
+</button> </div>
+<div class="col" style="padding:4px"><button class="button button-community" ng-click="go('community_trips')">
+  Projects
+</button></div> 
+<div class="col" style="padding:4px"><button class="button button-community" ng-click="go('members')">
+  Members
+</button></div>        
+</div>
+
+<div class="row" style="padding-top:15px;background:#f6f6f6"> 
+<div class="item" style="width:100%;padding:6px;margin-left:4px;margin-right:4px">
+          <a href="#/profile" class="item-avatar">
+            <img style="margin-top:-6px" src="http://3.bp.blogspot.com/-bTWNRjookMQ/VYGjnv5nKtI/AAAAAAAAA08/wXshQ9sNDeU/s100-c/blank-792125_1280.jpg"></img>
+          </a>   <button class="button comment_write" ng-click="go('post')">
+  Write...
+</button>
+<span style="position:absolute;top:10px">
+<i class="icon ion-camera larger positive" style="font-size: 36px;color: #777;"></i>
+</span>
+</div>
+ 
+</div>
+	  
+	     	<ion-refresher
+       	pulling-text="Pull to refresh..."
+       	on-refresh="doRefresh()">
+     	</ion-refresher>
+		<div class="list" ng-repeat="news in newsfeed" style="padding:10px;background:#f6f6f6;margin-bottom:0px;">
+		<a href="#/other_person" class="item item-avatar">
+            <img ng-src="{{news.friend_image}}"></img>
+            <h2>{{news.friend_name}}</h2>
+			<p>2 hours ago</p>
+        </a>
+        <div class="item">
+          	<a href="#/app/post"><h2>{{news.title}}</h2></a>
+        </div>
+        <div class="item item-image">
+          	<a href="#/app/post"><img ng-src="{{news.image}}"></img></a>
+        </div>
+        <div class="item tabs tabs-secondary tabs-icon-left">
+            <a ng-click="shareMain();" class="tab-item">
+			   <span style="font-size:16px">20 Kudos</span>
+               <i class="icon ion-ios-analytics" style="color:#287d7d"></i>
+            </a>
+             <a href="#/app/post" class="tab-item">
+			   <span style="font-size:16px"> 7 Comments</span>
+               <i class="icon ion-ios-compose" style="color:#287d7d"></i>
+             </a>
+         </div>
+      </div>
+      <ion-infinite-scroll
+       	ng-if="postsCompleted == false"
+       	on-infinite="getPosts()"
+       	distance="10%">
+     	</ion-infinite-scroll>
+	  
+        </ion-content>
+</ion-view>

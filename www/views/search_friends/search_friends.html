@@ -1,0 +1,46 @@
+
+
+<ion-view view-title="Search Friends" hide-back-button="false" hide-nav-bar="false">
+
+ <ion-nav-bar>
+  <ion-nav-back-button style="color:white">
+  </ion-nav-back-button>
+</ion-nav-bar>
+	
+ <ion-header-bar class="bar-light bar-subheader">
+      <input type="text" placeholder="Search for Friends" data-ng-model="searchForce">
+      <button ng-if="searchForce.length"
+              class="button button-icon ion-android-close input-button"
+              ng-click="clearSearch()"
+			  style="position:absolute;right:0px;margin-top:-2.0em">
+      </button>
+</ion-header-bar>
+     <ion-content class="post-content"  scroll="true">
+<ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)" style="height:200px">
+</ion-searchbar>
+
+   	<ion-refresher
+       	pulling-text="Pull to refresh..."
+       	on-refresh="doRefresh()">
+     	</ion-refresher>
+      <div class="list card">
+          <a href="#/other_person" class="item item-avatar" ng-repeat="friend in friends">
+            <img ng-src="{{friend.image}}"></img>
+            <h2>{{friend.title}}</h2>
+            <h2>@{{friend.title}}</h2>
+          </a>
+      </div>
+      <ion-infinite-scroll
+       	ng-if="postsCompleted == false"
+       	on-infinite="getPosts()"
+       	distance="10%">
+     	</ion-infinite-scroll>
+   </ion-content>
+
+
+
+</ion-view>

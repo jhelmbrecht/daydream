@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="stuff, to, help, search, engines, not" name="keywords">
+<meta content="What this page is about." name="description">
+<meta content="Display Webcam Stream" name="title">
+<title>Display Webcam Stream</title>
+  
+<style>
+#container {
+    margin: 0px auto;
+	width:64%;
+    border: 10px #333 solid;
+}
+#videoElement {
+	width:100%;
+	margin-bottom:-5px;
+    background-color: #666;
+}
+#recordButton{
+    height:50px;
+	width:50px;
+	border-radius:50px;
+    background: red;
+	margin:0px auto;
+    border: 4px solid white;
+}
+#recordContainer{
+    position:absolute;
+	margin-top:-80px;
+	width:100%;
+}
+#QuestionContainer{
+   position:absolute;
+   background:#a2a2ff;
+   color:white;
+   left:19%;
+   top:2.5%;
+   opacity:0.6;
+   border:2px solid darkblue;
+   border-radius:5px;
+   width:220px;
+   height:40px;
+   text-align: center;
+   font-size: 34px;
+}
+</style>
+</head>
+  
+<body>
+    <div id="QuestionContainer">1 of 500</div>
+<div id="container">
+    <video autoplay="true" id="videoElement">
+  
+    </video>
+</div>
+<div id="recordContainer">
+<div id="recordButton">
+</div>
+</div>
+<script>
+ var video = document.querySelector("#videoElement");
+ 
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+ 
+if (navigator.getUserMedia) {       
+    navigator.getUserMedia({video: true}, handleVideo, videoError);
+}
+ 
+function handleVideo(stream) {
+    video.src = window.URL.createObjectURL(stream);
+}
+ 
+function videoError(e) {
+    // do something
+}
+</script>
+</body>
+</html>

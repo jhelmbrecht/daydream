@@ -1,0 +1,45 @@
+
+
+<ion-view view-title="Bookings" hide-back-button="true" hide-nav-bar="false">
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon" style="color:white"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-search" style="color:white" ng-click="go('search_friends')"></button>
+  </ion-nav-buttons>
+
+  <ion-tabs class="tabs-positive tabs-top tabs-icon-top" scroll="true" >
+
+  <ion-tab title="Your Orders" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline" scroll="true">
+    <!-- Tab 1 content -->
+	 <ion-nav-view>
+	 <ion-content >
+      <div class="list card" style="margin-top:30px">
+          <a href="#/other_person" class="item item-avatar" ng-repeat="friend in bookings">
+            <img ng-src="{{friend.image}}"></img>
+            <h2>{{friend.title}}</h2>
+            <h2>@{{friend.title}}</h2>
+          </a>
+      </div>
+    </ion-content>
+    </ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Your Bookings" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+    <!-- Tab 2 content -->
+	 <ion-nav-view>
+	 <ion-content >
+      <div class="list card" style="margin-top:30px">
+          <a href="#/other_person" class="item item-avatar" ng-repeat="friend in bookings">
+            <img ng-src="{{friend.image}}"></img>
+            <h2>{{friend.title}}</h2>
+            <h2>@{{friend.title}}</h2>
+          </a>
+      </div>
+    </ion-content>
+    </ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>   
+</ion-view>

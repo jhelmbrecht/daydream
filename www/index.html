@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="views/login/login.js"></script>
+    <script src="views/forgot/forgot.js"></script>
+	<script src="views/newsfeed/newsfeed.js"></script>
+    <script src="views/trips/trips.js"></script>
+	<script src="views/trip/trip.js"></script>
+	<script src="views/bookings/bookings.js"></script>
+	<script src="views/book/book.js"></script>
+	<script src="views/newtrip/newtrip.js"></script>
+	<script src="views/newtrip/triplist.js"></script>
+	<script src="views/newtrip/invitefriends.js"></script>
+	<script src="views/profile/profile.js"></script>
+	<script src="views/other_person/other_person.js"></script>
+	<script src="views/settings/settings.js"></script>
+	<script src="views/communities/communities.js"></script>
+	<script src="views/community/community.js"></script>
+	<script src="views/members/members.js"></script>
+	<script src="views/community_trips/community_trips.js"></script>
+	<script src="views/search_friends/search_friends.js"></script>
+	<script src="views/search_communities/search_communities.js"></script>
+	<script src="views/communities/new_community/new_community.js"></script>
+	<script src="views/friends/friends.js"></script>
+	<script src="views/events/events.js"></script>
+	<script src="views/events/event/event.js"></script>
+	<script src="views/gallery/gallery.js"></script>
+    <script src="views/register/register.js"></script>
+	<script src="views/list/list.js"></script>
+	<script src="views/post/post.js"></script>
+    <script src="js/services/auth.js"></script>
+    <script src="js/services/utils.js"></script>
+
+    <!-- libraries -->
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/ngstorage/ngStorage.min.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/angularfire/dist/angularfire.min.js"></script>
+    <script src="lib/angular-messages/angular-messages.min.js"></script>
+    <script src="lib/angular-translate/angular-translate.min.js"></script>
+    <script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+
+  </head>
+
+  <body ng-app="App" ng-controller="TodoCtrl">
+    
+	
+	<ion-side-menus>
+
+   <ion-side-menu side="left" expose-aside-when="large">
+    <header class="bar bar-header bar-stable">
+      <h1 class="title">Day Dream</h1>
+    </header>
+    <ion-content class="has-header">
+ 	<div class="main-sidebar-profile">
+        <div class="profile-info">
+          <a menu-close="" href="#/profile"> <img id="profile-image" src="http://3.bp.blogspot.com/-zR75pEKCSSU/VYGjwNogrmI/AAAAAAAAA1Y/xgPrSXra3fE/s200-c/darts-102919_1280.jpg"> </a>
+          <a menu-close="" href="#/profile" class="profile-name">John Doe</a>
+        </div>
+      </div>
+      <ion-list>
+		<ion-item menu-close="" href="#/newsfeed">
+          <i class="icon ion-ios-paper-outline" style="font-size:30px;position:absolute;margin-top:-5px"></i> <span style="margin-left:35px"> Featured Artists</span>
+        </ion-item>
+	    <ion-item menu-close="" href="#/events">
+        <i class="icon ion-ios-flower-outline" style="font-size:30px;position:absolute;margin-top:-5px"></i> <span style="margin-left:35px"> 
+          Events
+        </span> </ion-item> 	
+		<ion-item menu-close="" href="#/communities">
+         <i class="icon ion-ios-people-outline" style="font-size:30px;position:absolute;margin-top:-5px"></i> <span style="margin-left:35px"> Communities </span>
+        </ion-item>  
+		<ion-item menu-close="" href="#/trips">
+        <i class="icon ion-paper-airplane" style="font-size:30px;position:absolute;margin-top:-5px"></i> <span style="margin-left:35px"> 
+          Projects
+        </span> </ion-item> 		
+		<ion-item menu-close="" href="#/bookings">
+        <i class="icon ion-ios-book-outline" style="font-size:30px;position:absolute;margin-top:-5px"></i> <span style="margin-left:35px"> 
+          Bookings
+        </span> </ion-item> 		
+        <ion-item menu-close="" href="#/friends">
+          <i class="icon ion-person-stalker" style="font-size:30px;position:absolute;margin-top:-5px"></i> <span style="margin-left:35px"> 
+          Connections
+        </span></ion-item>
+      </ion-list>
+    </ion-content>
+   </ion-side-menu>
+
+   <ion-side-menu-content>
+
+      <ion-nav-view>
+	  <ion-nav-bar>
+  <ion-nav-buttons side="left">
+   <!-- Toggle left side menu -->
+   <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  
+</ion-nav-bar>
+
+      </ion-nav-view>
+   </ion-side-menu-content>
+
+</ion-side-menus>
+
+  </body>
+</html>
+

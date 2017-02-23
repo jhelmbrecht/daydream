@@ -1,0 +1,52 @@
+<ion-view title="New Trip" hide-back-button="false" hide-nav-bar="false">
+<ion-nav-bar>
+  <ion-nav-back-button class="button-clear" style="color:white">
+  </ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content class="has-header">
+   
+	<form novalidate name="tripForm" ng-submit="newTrip(trip)">
+	  <div class="list">
+	    <label class="item item-input item-floating-label">
+            <span class="input-label">Name</span>
+            <input name="txt_trp_nm" type="text" ng-model="trip.name" placeholder="Trip Name"
+              ng-minlength="3"
+              ng-maxlength="90"
+              required>
+        </label>
+	    <label class="item item-input item-floating-label">
+            <span class="input-label">Where</span>
+            <input name="txt_trp_where" type="text" ng-model="trip.where" placeholder="Where"
+              ng-minlength="3"
+              ng-maxlength="90"
+              required>
+        </label>
+	    <label class="item item-input item-floating-label">
+            <span class="input-label">Start Date</span>
+            <input name="txt_trp_when" type="text" ng-model="trip.when" placeholder="9/07/2016"
+              ng-minlength="3"
+              ng-maxlength="90"
+              required>
+        </label>
+	    <label class="item item-input item-floating-label">
+            <span class="input-label">Num. of Days</span>
+            <input name="txt_trp_num_of_days" type="number" ng-model="trip.num_of_days" placeholder="3">
+        </label>
+	    <label class="item item-input item-floating-label">
+            <span class="input-label">Info</span>
+            <textarea name="txt_trp_info" style="height:100px;padding-top:5px" ng-model="trip.info" placeholder="Costs, Parking, Etc"></textarea>
+			
+        </label>
+		 
+		<input id="tripSubmitBtn" type="submit" style="display:none"/>
+		
+	  </div>
+	  
+	</form>
+  </ion-content>
+  <ion-footer-bar class="hide-on-keyboard-open">
+     <div style="width:100%;background:blue;color:white;margin:5px;text-align:center;border-color:#0c60ee;background-color:#387ef5;height: 35px;margin-top: -5px;padding: 6px;">
+      <a href="#"><label for="tripSubmitBtn" style="color:#fff;font-size:16px">Create List</label></a>
+	 </div>
+  </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,52 @@
+
+
+<ion-view title="Trip List" hide-back-button="false" hide-nav-bar="false">
+
+<ion-nav-bar>
+  <ion-nav-back-button class="button-clear" style="color:white">
+  </ion-nav-back-button>
+   <ion-nav-buttons side="right">
+    <a class="button button-icon icon ion-plus" style="color:white" ng-click="modal.show()"></a>
+  </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="has-header">
+         
+    <!-- our list and list items -->
+          <ion-list>
+          <ion-item ng-repeat="item in items">
+            {{item.name}}
+          </ion-item>
+          </ion-list>
+  </ion-content>
+  
+  
+  <script id="my-modal.html" type="text/ng-template">
+<ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+          <h1 class="title">New Contact</h1>
+          <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">First Name</span>
+              <input ng-model="newUser.firstName" type="text">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Last Name</span>
+              <input ng-model="newUser.lastName" type="text">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Email</span>
+              <input ng-model="newUser.email" type="text">
+            </label>
+            <button class="button button-full button-positive" ng-click="createContact(newUser)">Create</button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+</script>
+  
+  <ion-footer-bar>
+<button ng-click="inviteFriends()" class="button button-full button-positive" style="margin-top:0px;margin-bottom:0px">Invite Friends</button>
+</ion-footer-bar>
+</ion-view>

@@ -1,0 +1,33 @@
+
+
+<ion-view view-title="Community Projects" hide-back-button="false" hide-nav-bar="false">
+<ion-nav-bar>
+  <ion-nav-back-button style="color:white">
+  </ion-nav-back-button>
+</ion-nav-bar>
+ <ion-nav-buttons side="right">
+   <button class="button button-icon icon ion-plus-round" style="color:white" ng-click="newtrip()"></button>
+  </ion-nav-buttons>
+
+        <ion-content class="has-header">
+         
+    <!-- our list and list items -->
+      
+		  
+		  	  <div class="list">
+          <a href="#/trip" class="item item-thumbnail-left" ng-repeat="task in tasks">
+            <img ng-src="{{task.image_thumb}}"></img>
+            <h2>{{task.title}}</h2>
+            <p>{{task.description}}</p>
+            <p>2 hours ago</p>
+          </a>
+      </div>
+          <!-- TODO Profile -->
+          <!-- <button ng-click="profile()" class="button button-outline button-assertive">Profile</button> -->
+		
+         <!-- <button ng-click="logOut()" class="button button-full button-positive">Logout</button> -->
+		     <!-- align to the bottom of the page -->
+
+        </ion-content>
+
+</ion-view>

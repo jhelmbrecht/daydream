@@ -1,0 +1,42 @@
+<ion-view view-title="Photos"  hide-back-button="false" hide-nav-bar="false">
+<ion-nav-bar>
+  <ion-nav-back-button style="color:white">
+  </ion-nav-back-button>
+</ion-nav-bar>
+ <ion-nav-buttons side="right">
+   <button class="button button-icon icon ion-plus-round" style="color:white" ng-click=""></button>
+  </ion-nav-buttons>
+   <ion-content class="post-content gallery-top">
+   	<ion-refresher
+       pulling-text="Pull to refresh..."
+       on-refresh="doRefresh()">
+     </ion-refresher>
+		<div ng-repeat="photo in photos" class="row assertive">
+
+			<div class="col col-33 gallery-small" ng-show="photos[$index].image">
+				<a class="item item-image" ng-click="showImage($index);">
+            	<img ng-src="{{photos[$index].image}}"/>
+				</a>
+			</div>
+
+			<div class="col col-33 gallery-small" ng-show="photos[$index + 1].image">
+				<a class="item item-image" ng-click="showImage($index + 1);">
+            	<img ng-src="{{photos[$index + 1].image}}"/>
+				</a>
+			</div>
+            
+			<div class="col col-33 gallery-small" ng-show="photos[$index + 2].image">
+				<a class="item item-image" ng-click="showImage($index + 2);">
+            	<img ng-src="{{photos[$index + 2].image}}"/>
+				</a>
+			</div>
+
+		</div>
+      <ion-infinite-scroll
+       ng-if="postsCompleted == false"
+       on-infinite="getPosts()"
+       distance="10%">
+     </ion-infinite-scroll>
+   </ion-content>
+   
+</ion-view>
